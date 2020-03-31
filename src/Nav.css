@@ -1,0 +1,34 @@
+.Nav-header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+}
+
+.Nav-list {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+  width: 300px;
+  justify-content: space-evenly;
+  list-style:none;
+}
+
+.Nav-element {
+
+}
+
+.Nav-element a {
+  text-decoration: none;
+  color: black;
+}
+
+.Nav-active {
+  color: royalblue !important;
+  border-bottom: 1px solid royalblue;
+}

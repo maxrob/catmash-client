@@ -23,5 +23,5 @@ npm test
 ### Builds app for production
 
 ```Bash
-npm build
+npm run-script build
 ```
