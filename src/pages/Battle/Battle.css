@@ -1,0 +1,41 @@
+.Battle {
+  background-color: #1BBC9B;
+  height: 100%;
+}
+
+.Battle-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.Battle-footer {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  width: 100%;
+  text-align: center;
+  background-color: #1BBC9B;
+}
+
+.Battle-title {
+  margin: 0;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.Battle-subtitle {
+  margin: 0 0 30px 0;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+@media screen and (max-width: 1024px)
+{
+  .Battle-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

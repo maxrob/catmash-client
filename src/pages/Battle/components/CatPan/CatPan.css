@@ -1,0 +1,23 @@
+.Cat-Pan-content {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Cat-Pan-content:first-of-type {
+  border-right: 1px solid white;
+}
+
+@media screen and (max-width: 1024px)
+{
+  .Cat-Pan-content {
+    height: 40%;
+  }
+
+  .Cat-Pan-content:first-of-type {
+    border-right: none;
+    border-bottom: 1px solid white;
+  }
+}

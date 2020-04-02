@@ -6,6 +6,7 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom'
+import './App.css'
 import './Nav.css'
 import { Battle } from './pages/Battle'
 import { Dashboard } from './pages/Dashboard'
@@ -13,19 +14,23 @@ import { Dashboard } from './pages/Dashboard'
 function App() {
   return (
     <Router>
-      <div>
+      <div className="App-content">
         <nav className="Nav-header">
           <ul className="Nav-list">
-            <li className="Nav-element">
-              <NavLink to="/battle" activeClassName="Nav-active">
-                Battle
-              </NavLink>
-            </li>
-            <li className="Nav-element">
-              <NavLink to={'/dashboard'} activeClassName="Nav-active">
-                Dashboard
-              </NavLink>
-            </li>
+            <NavLink
+              to="/battle"
+              className="Nav-element"
+              activeClassName="Nav-active"
+            >
+              Battle
+            </NavLink>
+            <NavLink
+              to="/dashboard"
+              className="Nav-element"
+              activeClassName="Nav-active"
+            >
+              Dashboard
+            </NavLink>
           </ul>
         </nav>
         <Switch>
