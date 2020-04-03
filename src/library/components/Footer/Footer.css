@@ -1,0 +1,20 @@
+.Footer {
+  position: absolute;
+  bottom: 0;
+  color: #1BBC9B;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+}
+
+.Footer-title {
+  margin: 20px 0 0 0;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.Footer-subtitle {
+  margin: 0 0 20px 0;
+  font-size: 1rem;
+  font-style: italic;
+}

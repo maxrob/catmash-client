@@ -1,5 +1,6 @@
 import React from 'react'
 import { CatPan } from './components/CatPan'
+import { Footer } from '../../library/components/Footer'
 import './Battle.css'
 
 const FIRST_CAT: Cat = {
@@ -20,9 +21,6 @@ export const Battle = () => (
       <CatPan cat={FIRST_CAT} />
       <CatPan cat={SECOND_CAT} />
     </div>
-    <div className="Battle-footer">
-      <h1 className="Battle-title">Catmash</h1>
-      <h2 className="Battle-subtitle">Battle of cats</h2>
-    </div>
+    <Footer />
   </div>
 )
