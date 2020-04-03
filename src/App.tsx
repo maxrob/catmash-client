@@ -9,7 +9,7 @@ import {
 import './App.css'
 import './Nav.css'
 import { Battle } from './pages/Battle'
-import { Dashboard } from './pages/Dashboard'
+import { Leadboard } from './pages/Leadboard'
 
 function App() {
   return (
@@ -25,17 +25,17 @@ function App() {
               Battle
             </NavLink>
             <NavLink
-              to="/dashboard"
+              to="/leadboard"
               className="Nav-element"
               activeClassName="Nav-active"
             >
-              Dashboard
+              Leadboard
             </NavLink>
           </ul>
         </nav>
         <Switch>
           <Route exact path="/battle" component={Battle} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/leadboard" component={Leadboard} />
           <Redirect to="/battle" />
         </Switch>
       </div>
