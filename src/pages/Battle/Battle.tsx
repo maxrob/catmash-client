@@ -5,6 +5,7 @@ import { jsx } from '@emotion/core'
 import { CatPan } from './components/CatPan'
 import { Footer } from 'library/components/Footer'
 import { colors } from 'res/colors'
+import { mediaQueries } from 'res/mediaQueries'
 
 const FIRST_CAT: Cat = {
   _id: 'first_cat',
@@ -37,7 +38,7 @@ const styles = {
     display: 'flex',
     height: '100%',
     alignItems: 'center',
-    '@media screen and (max-width: 1024px)': {
+    [mediaQueries.maxScreenWidth1024]: {
       display: 'flex',
       height: '100%',
       flexDirection: 'column' as 'column',

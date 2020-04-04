@@ -4,6 +4,7 @@ import React from 'react'
 import { jsx } from '@emotion/core'
 import { CatImage } from './components/CatImage'
 import { colors } from 'res/colors'
+import { mediaQueries } from 'res/mediaQueries'
 
 export const CatPan = ({ cat }: { cat: Cat }) => (
   <div css={styles.catPan}>
@@ -21,7 +22,7 @@ const styles = {
     ':first-of-type': {
       borderRight: `1px solid ${colors.white}`,
     },
-    '@media screen and (max-width: 1024px)': {
+    [mediaQueries.maxScreenWidth1024]: {
       height: '40%',
       ':first-of-type': {
         borderRight: 'none',

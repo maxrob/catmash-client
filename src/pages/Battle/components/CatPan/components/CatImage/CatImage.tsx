@@ -3,6 +3,7 @@ import React from 'react'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { colors } from 'res/colors'
+import { mediaQueries } from 'res/mediaQueries'
 
 export const CatImage = ({ cat }: { cat: Cat }) => {
   const handleClick = () => {
@@ -32,7 +33,7 @@ const styles = {
     ':hover': {
       border: `15px solid ${colors.white}`,
     },
-    '@media screen and (max-width: 1024px)': {
+    [mediaQueries.maxScreenWidth1024]: {
       backgroundSize: 'cover',
       backgroundPosition: '50%',
       height: '20vh',
