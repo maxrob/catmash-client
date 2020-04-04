@@ -1,5 +1,7 @@
+// eslint-disable-next-line
 import React from 'react'
-import './CatImage.css'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 
 export const CatImage = ({ cat }: { cat: Cat }) => {
   const handleClick = () => {
@@ -10,9 +12,33 @@ export const CatImage = ({ cat }: { cat: Cat }) => {
     // eslint-disable-next-line
     <a onClick={handleClick}>
       <div
-        className="Cat-Image-content"
+        css={styles.catImage}
         style={{ backgroundImage: `url(${cat.avatar})` }}
       />
     </a>
   )
+}
+
+const styles = {
+  catImage: {
+    backgroundSize: 'cover',
+    backgroundPosition: '50%',
+    height: '40vh',
+    width: '40vh',
+    borderRadius: '40vh',
+    border: '10px white solid',
+    transition: '0.3s',
+    ':hover': {
+      border: '15px white solid',
+    },
+    '@media screen and (max-width: 1024px)': {
+      backgroundSize: 'cover',
+      backgroundPosition: '50%',
+      height: '20vh',
+      width: '20vh',
+      borderRadius: '20vh',
+      border: '5px white solid',
+      transition: 'none',
+    },
+  },
 }

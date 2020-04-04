@@ -1,7 +1,9 @@
+// eslint-disable-next-line
 import React from 'react'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import { CatPan } from './components/CatPan'
 import { Footer } from '../../library/components/Footer'
-import './Battle.css'
 
 const FIRST_CAT: Cat = {
   _id: 'first_cat',
@@ -16,11 +18,29 @@ const SECOND_CAT: Cat = {
 }
 
 export const Battle = () => (
-  <div className="Battle">
-    <div className="Battle-content">
+  <div css={styles.battle}>
+    <div css={styles.battleContent}>
       <CatPan cat={FIRST_CAT} />
       <CatPan cat={SECOND_CAT} />
     </div>
     <Footer />
   </div>
 )
+
+const styles = {
+  battle: {
+    backgroundColor: '#1BBC9B',
+    height: '100%',
+  },
+  battleContent: {
+    display: 'flex',
+    height: '100%',
+    alignItems: 'center',
+    '@media screen and (max-width: 1024px)': {
+      display: 'flex',
+      height: '100%',
+      flexDirection: 'column' as 'column',
+      justifyContent: 'center',
+    },
+  },
+}
