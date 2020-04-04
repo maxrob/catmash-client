@@ -1,5 +1,5 @@
 import React from 'react'
-import { Footer } from '../../library/components/Footer'
+import { Footer } from 'library/components/Footer'
 
 export const Leadboard = () => (
   <div className="Leadboard">

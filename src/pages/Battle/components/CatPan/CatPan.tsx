@@ -3,6 +3,7 @@ import React from 'react'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { CatImage } from './components/CatImage'
+import { colors } from 'res/colors'
 
 export const CatPan = ({ cat }: { cat: Cat }) => (
   <div css={styles.catPan}>
@@ -18,13 +19,13 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     ':first-of-type': {
-      borderRight: '1px solid white',
+      borderRight: `1px solid ${colors.white}`,
     },
     '@media screen and (max-width: 1024px)': {
       height: '40%',
       ':first-of-type': {
         borderRight: 'none',
-        borderBottom: '1px solid white',
+        borderBottom: `1px solid ${colors.white}`,
       },
     },
   },

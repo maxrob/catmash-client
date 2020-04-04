@@ -9,8 +9,9 @@ import {
 } from 'react-router-dom'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { Battle } from './pages/Battle'
-import { Leadboard } from './pages/Leadboard'
+import { Battle } from 'pages/Battle'
+import { Leadboard } from 'pages/Leadboard'
+import { colors } from 'res/colors'
 
 function App() {
   return (
@@ -50,7 +51,7 @@ const styles = {
     position: 'absolute' as 'absolute',
     top: '0',
     display: 'flex',
-    background: 'white',
+    background: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
     height: '80px',
@@ -70,18 +71,12 @@ const styles = {
     width: '50%',
     height: '100%',
     textDecoration: 'none',
-    color: '#313947',
-    backgroundColor: '#ECEDF2',
-    borderBottom: '1px solid #babdd0',
-    borderLeft: '1px solid #babdd0',
-    borderRight: '1px solid #babdd0',
+    color: colors.black,
+    backgroundColor: colors.lightGrey,
   },
   navActive: {
-    backgroundColor: '#1BBC9B',
-    color: 'white',
-    borderBottom: '1px solid transparent',
-    borderLeft: '1px solid transparent',
-    borderRight: '1px solid transparent',
+    backgroundColor: colors.green,
+    color: colors.white,
   },
 }
 

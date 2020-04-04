@@ -3,7 +3,8 @@ import React from 'react'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { CatPan } from './components/CatPan'
-import { Footer } from '../../library/components/Footer'
+import { Footer } from 'library/components/Footer'
+import { colors } from 'res/colors'
 
 const FIRST_CAT: Cat = {
   _id: 'first_cat',
@@ -29,7 +30,7 @@ export const Battle = () => (
 
 const styles = {
   battle: {
-    backgroundColor: '#1BBC9B',
+    backgroundColor: colors.green,
     height: '100%',
   },
   battleContent: {

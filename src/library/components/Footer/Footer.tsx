@@ -2,6 +2,7 @@
 import React from 'react'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import { colors } from 'res/colors'
 
 export const Footer = () => (
   <div css={styles.footer}>
@@ -14,10 +15,10 @@ const styles = {
   footer: {
     position: 'absolute' as 'absolute',
     bottom: '0',
-    color: '#1BBC9B',
+    color: colors.green,
     width: '100%',
     textAlign: 'center' as 'center',
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
   },
   footerTitle: {
     margin: '20px 0 0 0',

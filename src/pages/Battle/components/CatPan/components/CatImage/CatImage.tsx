@@ -2,6 +2,7 @@
 import React from 'react'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import { colors } from 'res/colors'
 
 export const CatImage = ({ cat }: { cat: Cat }) => {
   const handleClick = () => {
@@ -26,10 +27,10 @@ const styles = {
     height: '40vh',
     width: '40vh',
     borderRadius: '40vh',
-    border: '10px white solid',
+    border: `10px solid ${colors.white}`,
     transition: '0.3s',
     ':hover': {
-      border: '15px white solid',
+      border: `15px solid ${colors.white}`,
     },
     '@media screen and (max-width: 1024px)': {
       backgroundSize: 'cover',
@@ -37,7 +38,7 @@ const styles = {
       height: '20vh',
       width: '20vh',
       borderRadius: '20vh',
-      border: '5px white solid',
+      border: `5px solid ${colors.white}`,
       transition: 'none',
     },
   },
