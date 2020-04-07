@@ -1,13 +1,15 @@
 // eslint-disable-next-line
-import React from 'react'
+import React, { useContext } from 'react'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { colors } from 'res/colors'
-import { catsFixtures } from 'res/catsFixtures'
 import { CatLine } from './components/CatLine'
+import { CatListContext } from 'pages/Leadboard/components/CatList/CatList.context'
 
 export const CatList = () => {
-  const catList = catsFixtures.map((cat, key) => (
+  const { cats } = useContext(CatListContext)
+
+  const catList = cats.map((cat, key) => (
     <CatLine cat={cat} position={key + 1} key={cat._id} />
   ))
   return <div css={styles.catList}>{catList}</div>

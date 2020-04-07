@@ -12,7 +12,7 @@ import { jsx } from '@emotion/core'
 import { CatMash } from 'pages/CatMash'
 import { Leadboard } from 'pages/Leadboard'
 import { colors } from 'res/colors'
-import { CatMashContextProvider } from 'pages/CatMash/CatMash.context'
+import { CatMashContextProvider } from 'pages/CatMash'
 
 function App() {
   return (

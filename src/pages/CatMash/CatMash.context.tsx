@@ -68,7 +68,7 @@ const CatMashContextProvider: FC = ({ children }) => {
 
   return (
     <CatMashContext.Provider value={catMashContextApi}>
-      ({children})
+      {children}
     </CatMashContext.Provider>
   )
 }
