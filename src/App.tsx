@@ -9,9 +9,10 @@ import {
 } from 'react-router-dom'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { Battle } from 'pages/Battle'
+import { CatMash } from 'pages/CatMash'
 import { Leadboard } from 'pages/Leadboard'
 import { colors } from 'res/colors'
+import { CatMashContextProvider } from 'pages/CatMash/CatMash.context'
 
 function App() {
   return (
@@ -19,11 +20,11 @@ function App() {
       <div css={styles.app}>
         <nav css={styles.nav}>
           <NavLink
-            to="/battle"
+            to="/catmash"
             css={styles.navElement}
             activeStyle={styles.navActive}
           >
-            Battle
+            Catmash
           </NavLink>
           <NavLink
             to="/leadboard"
@@ -34,9 +35,13 @@ function App() {
           </NavLink>
         </nav>
         <Switch>
-          <Route exact path="/battle" component={Battle} />
+          <Route exact path="/catmash">
+            <CatMashContextProvider>
+              <CatMash />
+            </CatMashContextProvider>
+          </Route>
           <Route exact path="/leadboard" component={Leadboard} />
-          <Redirect to="/battle" />
+          <Redirect to="/catmash" />
         </Switch>
       </div>
     </Router>

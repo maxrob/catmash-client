@@ -6,10 +6,8 @@ import { CatImage } from './components/CatImage'
 import { colors } from 'res/colors'
 import { mediaQueries } from 'res/mediaQueries'
 
-export const CatPan = ({ cat }: { cat: Cat }) => (
-  <div css={styles.catPan}>
-    <CatImage cat={cat} />
-  </div>
+export const CatPan = ({ cat }: { cat: Cat | null }) => (
+  <div css={styles.catPan}>{cat && <CatImage cat={cat} />}</div>
 )
 
 const styles = {

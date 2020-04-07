@@ -1,13 +1,18 @@
 // eslint-disable-next-line
-import React from 'react'
+import React, { useContext } from 'react'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { colors } from 'res/colors'
 import { mediaQueries } from 'res/mediaQueries'
 
+import { CatMashContext } from 'pages/CatMash'
+
 export const CatImage = ({ cat }: { cat: Cat }) => {
+  const { incrementCat, updateCatMashes } = useContext(CatMashContext)
+
   const handleClick = () => {
-    alert(cat._id)
+    incrementCat(cat._id)
+    updateCatMashes()
   }
 
   return (
@@ -29,10 +34,6 @@ const styles = {
     width: '40vh',
     borderRadius: '40vh',
     border: `10px solid ${colors.white}`,
-    transition: '0.3s',
-    ':hover': {
-      border: `15px solid ${colors.white}`,
-    },
     [mediaQueries.maxScreenWidth1024]: {
       backgroundSize: 'cover',
       backgroundPosition: '50%',
