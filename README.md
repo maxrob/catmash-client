@@ -1,5 +1,8 @@
 # Catmash
 
+Available on : <https://maxrob-catmash.herokuapp.com/catmash>
+Catmash api on Github : <https://github.com/maxrob/catmash-api>
+
 ### Install Project:
 
 ```Bash
