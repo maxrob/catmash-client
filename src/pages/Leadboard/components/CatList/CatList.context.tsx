@@ -1,5 +1,6 @@
 import React, { FC, createContext, useState, useEffect, useMemo } from 'react'
 import axios from 'axios'
+import { getCats } from 'res/apiRoutes'
 
 interface CatListContextProps {
   cats: Cat[]
@@ -14,7 +15,7 @@ const CatListContextProvider: FC = ({ children }) => {
 
   useEffect(() => {
     const fetchCats = async () => {
-      const res = await axios.get('https://maxrob-catmash-api.herokuapp.com/cats')
+      const res = await axios.get(getCats())
       setCats(res.data)
     }
 

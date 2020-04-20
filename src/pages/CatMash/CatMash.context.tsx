@@ -1,5 +1,9 @@
 import React, { FC, createContext, useState, useEffect, useMemo } from 'react'
 import axios, { AxiosResponse } from 'axios'
+import { getCatsMashes, addCatPoint } from 'res/apiRoutes'
+
+const CATS_LIST_LIMIT = 100
+const CATS_LIST_RELOAD = 20
 
 interface CatMashContextProps {
   catMashes: [Cat, Cat][]
@@ -20,7 +24,7 @@ const CatMashContextProvider: FC = ({ children }) => {
   const [nextCatMash, setNextCatMash] = useState<[Cat, Cat][]>([])
 
   const fetchCatMashes = async (isInit: boolean) => {
-    const res = await axios.get('https://maxrob-catmash-api.herokuapp.com/cats/mashes?limit=10')
+    const res = await axios.get(getCatsMashes(CATS_LIST_LIMIT))
 
     if (isInit) {
       return setCatMashes(res.data)
@@ -34,14 +38,14 @@ const CatMashContextProvider: FC = ({ children }) => {
   }, [])
 
   useEffect(() => {
-    if (catMashes.length === 5) {
+    if (catMashes.length === CATS_LIST_RELOAD) {
       fetchCatMashes(false)
     }
   }, [catMashes])
 
   // eslint-disable-next-line
   const incrementCat = async (id: string) => {
-    const res = await axios.post(`https://maxrob-catmash-api.herokuapp.com/cats/${id}/add_point`)
+    const res = await axios.post(addCatPoint(id))
     return res
   }
 
