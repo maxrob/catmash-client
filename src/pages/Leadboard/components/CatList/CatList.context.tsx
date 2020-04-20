@@ -14,7 +14,7 @@ const CatListContextProvider: FC = ({ children }) => {
 
   useEffect(() => {
     const fetchCats = async () => {
-      const res = await axios.get('http://localhost:3000/cats')
+      const res = await axios.get('https://maxrob-catmash-api.herokuapp.com/cats')
       setCats(res.data)
     }
 

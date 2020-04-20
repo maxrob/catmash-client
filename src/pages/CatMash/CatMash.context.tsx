@@ -20,7 +20,7 @@ const CatMashContextProvider: FC = ({ children }) => {
   const [nextCatMash, setNextCatMash] = useState<[Cat, Cat][]>([])
 
   const fetchCatMashes = async (isInit: boolean) => {
-    const res = await axios.get('http://localhost:3000/cats/mashes?limit=10')
+    const res = await axios.get('https://maxrob-catmash-api.herokuapp.com/cats/mashes?limit=10')
 
     if (isInit) {
       return setCatMashes(res.data)
@@ -41,7 +41,7 @@ const CatMashContextProvider: FC = ({ children }) => {
 
   // eslint-disable-next-line
   const incrementCat = async (id: string) => {
-    const res = await axios.post(`http://localhost:3000/cats/${id}/add_point`)
+    const res = await axios.post(`https://maxrob-catmash-api.herokuapp.com/cats/${id}/add_point`)
     return res
   }
 
