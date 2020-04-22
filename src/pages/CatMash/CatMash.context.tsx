@@ -1,4 +1,11 @@
-import React, { FC, createContext, useState, useEffect, useMemo } from 'react'
+import React, {
+  FC,
+  createContext,
+  useState,
+  useEffect,
+  useRef,
+  useMemo,
+} from 'react'
 import axios, { AxiosResponse } from 'axios'
 import { getCatsMashes, addCatPoint } from 'res/apiRoutes'
 
@@ -20,26 +27,36 @@ const CatMashContext = createContext<CatMashContextProps>({
 })
 
 const CatMashContextProvider: FC = ({ children }) => {
+  const isCancelled = useRef(false)
   const [catMashes, setCatMashes] = useState<[Cat, Cat][]>([])
   const [nextCatMash, setNextCatMash] = useState<[Cat, Cat][]>([])
 
   const fetchCatMashes = async (isInit: boolean) => {
     const res = await axios.get(getCatsMashes(CATS_LIST_LIMIT))
 
-    if (isInit) {
-      return setCatMashes(res.data)
+    if (!isCancelled.current) {
+      if (isInit) {
+        setCatMashes(res.data)
+      }
+      setNextCatMash(res.data)
     }
-
-    return setNextCatMash(res.data)
   }
 
   useEffect(() => {
     fetchCatMashes(true)
+
+    return () => {
+      isCancelled.current = true
+    }
   }, [])
 
   useEffect(() => {
     if (catMashes.length === CATS_LIST_RELOAD) {
       fetchCatMashes(false)
+    }
+
+    return () => {
+      isCancelled.current = true
     }
   }, [catMashes])
 

@@ -17,7 +17,7 @@ export const CatImage = ({ cat }: { cat: Cat }) => {
 
   return (
     // eslint-disable-next-line
-    <a onClick={handleClick}>
+    <a data-testid="catmash-link" onClick={handleClick}>
       <div
         css={styles.catImage}
         style={{ backgroundImage: `url(${cat.avatar})` }}

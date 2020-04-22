@@ -7,7 +7,7 @@ import { mediaQueries } from 'res/mediaQueries'
 import { pluralize } from 'library/helpers/pluralize'
 
 export const CatLine = ({ cat, position }: { cat: Cat; position: number }) => (
-  <div css={styles.catLine}>
+  <div css={styles.catLine} data-testid="cat-line">
     <p css={styles.catLinePosition}>#{position}</p>
     <div
       css={styles.catLineAvatar}

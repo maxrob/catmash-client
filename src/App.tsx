@@ -23,6 +23,7 @@ function App() {
             to="/catmash"
             css={styles.navElement}
             activeStyle={styles.navActive}
+            data-testid="nav-catmash-link"
           >
             Catmash
           </NavLink>
@@ -30,6 +31,7 @@ function App() {
             to="/leadboard"
             css={styles.navElement}
             activeStyle={styles.navActive}
+            data-testid="nav-leadboard-link"
           >
             Leadboard
           </NavLink>
